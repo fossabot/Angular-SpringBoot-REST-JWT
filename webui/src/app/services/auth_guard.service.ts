@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UserInfoService } from './user-info.service';
 import { LoginService } from './api/login.service';
-import { Router, CanActivate, CanActivateChild,ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Router, CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
 @Injectable()
 export class AuthGuard implements CanActivate, CanActivateChild {
@@ -13,9 +13,9 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     ) { }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-        let url: string = state.url;
+        const url: string = state.url;
         return this.checkLogin(url);
-        //return true;
+        // return true;
     }
 
     canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
@@ -26,10 +26,10 @@ export class AuthGuard implements CanActivate, CanActivateChild {
         if (this.userInfoService.isLoggedIn()) {
             return true;
         }
-        console.log("User is not logged - This routing guard prvents redirection to any routes that needs logging.");
-        //Store the original url in login service and then redirect to login page
+        console.log('User is not logged - This routing guard prvents redirection to any routes that needs logging.');
+        // Store the original url in login service and then redirect to login page
         this.loginService.landingPage = url;
-        this.router.navigate(['login',]);
+        this.router.navigate(['login', ]);
         return false;
     }
 }

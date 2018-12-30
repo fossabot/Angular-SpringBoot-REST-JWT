@@ -13,9 +13,9 @@
       "curly": true,
       "eofline": true,
       "forin": true,
+      "no-unused-variable": true,
       "import-blacklist": [
         true,
-        "rxjs",
         "rxjs/Rx"
       ],
       "import-spacing": true,

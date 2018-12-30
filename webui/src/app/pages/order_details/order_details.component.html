@@ -1,16 +1,25 @@
 <div class="order-detail-pg pad-16">
     <form [formGroup]="frmOrderDetail" novalidate>
         <h3> Order:{{orderId}} </h3>
-        <br/>
+        <br />
         <clr-tabs>
             <clr-tab>
                 <button clrTabLink>Order Line</button>
                 <clr-tab-content>
-                    <br/>
+                    <br />
                     <table class="s-order-header">
-                        <tr><td style="width:125px">Customer     </td> <td> {{orderDetailsRec.customerName}} ({{orderDetailsRec.customerId}}) </td></tr>
-                        <tr><td>Email        </td> <td> {{orderDetailsRec.customerEmail}} </td></tr>
-                        <tr><td>Order Status </td> <td> {{orderDetailsRec.orderStatus}} </td></tr>
+                        <tr>
+                            <td style="width:125px">Customer </td>
+                            <td> {{orderDetailsRec.customerName}} ({{orderDetailsRec.customerId}}) </td>
+                        </tr>
+                        <tr>
+                            <td>Email </td>
+                            <td> {{orderDetailsRec.customerEmail}} </td>
+                        </tr>
+                        <tr>
+                            <td>Order Status </td>
+                            <td> {{orderDetailsRec.orderStatus}} </td>
+                        </tr>
                     </table>
                     <table class="s-order-line table" style="width:100%;">
                         <thead>
@@ -32,8 +41,12 @@
                                 <td class="left">{{o.category}}</td>
                                 <td class="right">{{o.quantity}}</td>
                                 <td class="right">{{o.unitPrice}}</td>
-                                <td style="width:40px;"><clr-icon shape="edit"  class="is-info"></clr-icon></td>
-                                <td style="width:40px;"><clr-icon shape="trash" class="is-error"></clr-icon></td>
+                                <td style="width:40px;">
+                                    <clr-icon shape="edit" class="is-info"></clr-icon>
+                                </td>
+                                <td style="width:40px;">
+                                    <clr-icon shape="trash" class="is-error"></clr-icon>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -51,7 +64,8 @@
                             </tr>
                             <tr>
                                 <td>Fee</td>
-                                <td colspan="2"><input type="text" formControlName="shippedFee" style="width:60px"> </td>
+                                <td colspan="2"><input type="text" formControlName="shippedFee" style="width:60px">
+                                </td>
                             </tr>
                             <tr>
                                 <td>Address</td>
@@ -67,11 +81,13 @@
                             </tr>
                             <tr>
                                 <td>State</td>
-                                <td colspan="2"><input type="text" formControlName="shipState" style="width:150px"> </td>
+                                <td colspan="2"><input type="text" formControlName="shipState" style="width:150px">
+                                </td>
                             </tr>
                             <tr>
                                 <td>Country</td>
-                                <td colspan="2"><input type="text" formControlName="shipCountry" style="width:150px"> </td>
+                                <td colspan="2"><input type="text" formControlName="shipCountry" style="width:150px">
+                                </td>
                             </tr>
                         </table>
                     </section>
@@ -79,8 +95,8 @@
             </clr-tab>
         </clr-tabs>
     </form>
-    <br/>
-    <button [routerLink]="'/home/orders'" type="submit" class="btn btn-primary" >
+    <br />
+    <button [routerLink]="'/home/orders'" type="submit" class="btn btn-primary">
         <clr-icon shape="caret left"></clr-icon>Back to Orders
     </button>
 </div>

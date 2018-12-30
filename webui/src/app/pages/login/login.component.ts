@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 
 export class LoginComponent implements OnInit {
     model: any = {};
-    errMsg:string = '';
+    errMsg = '';
     constructor(
         private router: Router,
         private loginService: LoginService) { }
@@ -23,14 +23,14 @@ export class LoginComponent implements OnInit {
     login() {
         this.loginService.getToken(this.model.username, this.model.password)
             .subscribe(resp => {
-                    if (resp.user === undefined || resp.user.token === undefined || resp.user.token === "INVALID" ){
+                    if (resp.user === undefined || resp.user.token === undefined || resp.user.token === 'INVALID' ) {
                         this.errMsg = 'Username or password is incorrect';
                         return;
                     }
                     this.router.navigate([resp.landingPage]);
                 },
                 errResponse => {
-                  switch(errResponse.status){
+                  switch (errResponse.status) {
                     case 401:
                       this.errMsg = 'Username or password is incorrect';
                       break;
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
             );
     }
 
-    onSignUp(){
+    onSignUp() {
       this.router.navigate(['signup']);
     }
 

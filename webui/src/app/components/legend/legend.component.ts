@@ -1,9 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-	selector : 's-legend',
-    styleUrls: [ './legend.scss'],
-	template : `
+    selector: 's-legend',
+    styleUrls: ['./legend.scss'],
+    template: `
     <div class="s-legend-wrap">
         <div *ngFor=" let l of legend " class="s-legend-item">
         <div  [ngStyle]="{'background-color':l.color}" class="s-legend-color"></div>
@@ -16,6 +16,6 @@ import { Component, OnInit, Input } from '@angular/core';
     `
 })
 
-export class LegendComponent{
-  @Input() legend:any[];
+export class LegendComponent {
+    @Input() legend: any[];
 }

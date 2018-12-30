@@ -1,8 +1,10 @@
-import { Component, OnInit,TemplateRef, ViewChild } from '@angular/core';
+
+import {switchMap} from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../../services/api/order.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { FormBuilder, FormGroup , FormControl,Validators} from '@angular/forms';
-import 'rxjs/add/operator/switchMap';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+
 
 @Component({
 	selector: 's-orders-pg',
@@ -11,17 +13,17 @@ import 'rxjs/add/operator/switchMap';
 })
 
 export class OrderDetailsComponent implements OnInit {
-    public orderId:number;
+    public orderId: number;
     public frmOrderDetail: FormGroup;
-    public orderDetailsRec:any={id:'',orderLine:[]};
-    public isOrderOnHold:boolean = false;
+    public orderDetailsRec: any = {id: '', orderLine: []};
+    public isOrderOnHold = false;
 
-    public rows=[];
-    public columns =[
-        {prop:"productName" , name: "Product"    , width:200 },
-        {prop:"productCode" , name: "Code"       , width:70  },
-        {prop:"category"    , name: "Category"   , width:100 },
-        {prop:"listPrice"   , name: "List Price" , width:70  }
+    public rows = [];
+    public columns = [
+        {prop: 'productName' , name: 'Product'    , width: 200 },
+        {prop: 'productCode' , name: 'Code'       , width: 70  },
+        {prop: 'category'    , name: 'Category'   , width: 100 },
+        {prop: 'listPrice'   , name: 'List Price' , width: 70  }
     ];
 
     constructor(
@@ -83,34 +85,34 @@ export class OrderDetailsComponent implements OnInit {
     ngOnInit(): void {
 
         this.frmOrderDetail = this.formBuilder.group({
-            customerName   : ['',Validators.required],
-            customerEmail  : ['',Validators.required],
-            customerCompany: ['',Validators.required],
-            orderStatus    : ['',Validators.required],
-            orderDate      : ['',Validators.required],
+            customerName   : ['', Validators.required],
+            customerEmail  : ['', Validators.required],
+            customerCompany: ['', Validators.required],
+            orderStatus    : ['', Validators.required],
+            orderDate      : ['', Validators.required],
             paymentType    : [''],
             paidDate       : [''],
-            shipAddress1   : ['',Validators.required],
-            shipAddress2   : ['',Validators.required],
-            shipCity       : ['',Validators.required],
-            shipCountry    : ['',Validators.required],
-            shipState      : ['',Validators.required],
-            shippedDate    : ['',Validators.required],
-            shippedFee     : ['',Validators.required],
+            shipAddress1   : ['', Validators.required],
+            shipAddress2   : ['', Validators.required],
+            shipCity       : ['', Validators.required],
+            shipCountry    : ['', Validators.required],
+            shipState      : ['', Validators.required],
+            shippedDate    : ['', Validators.required],
+            shippedFee     : ['', Validators.required],
         });
         this.getData();
 
     }
 
-    getData(){
-        var me = this;
-        this.route.params
-        .switchMap( function(params: Params){
+    getData() {
+        const me = this;
+        this.route.params.pipe(
+        switchMap( function(params: Params) {
             me.orderId = params['id'];
-            return me.orderService.getOrderDetails(params['id'])
-        })
-        .subscribe(function(resp){
-            console.log("Order details", resp[0]);
+            return me.orderService.getOrderDetails(params['id']);
+        }))
+        .subscribe(function(resp) {
+            console.log('Order details', resp[0]);
             me.frmOrderDetail.setValue({
                 customerName   : [resp[0].customerName],
                 customerEmail  : [resp[0].customerEmail],
@@ -134,8 +136,8 @@ export class OrderDetailsComponent implements OnInit {
         });
     }
 
-    goBack(){
-        console.log("Back");
+    goBack() {
+        console.log('Back');
     }
 
 
