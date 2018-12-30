@@ -5,7 +5,7 @@
 > Angular and SpringBoot both have way too much of magic, if you are one who like to be in controll of their code, then check > out my project on pure Java 11 (With Modules), Jersey and Vue.JS for UI
 > [WebApp with Java 11, Jersey and VueJS](https://github.com/mrin9/Modular-Java-Jersey-Vue)
 
-## Angular 5+ Frontent with SpringBoot (Java) Backend
+## Angular 7 Frontend with SpringBoot (Java) Backend
 Application to demonstrate various parts of a service oriented RESTfull application. 
 
 
@@ -22,7 +22,7 @@ Application to demonstrate various parts of a service oriented RESTfull applicat
 ### Technology Stack
 Component         | Technology
 ---               | ---
-Frontend          | [Angular 5](https://github.com/angular/angular)
+Frontend          | [Angular 7](https://github.com/angular/angular)
 Backend (REST)    | [SpringBoot](https://projects.spring.io/spring-boot) (Java)
 Security          | Token Based (Spring Security and [JWT](https://github.com/auth0/java-jwt) )
 REST Documentation| [Swagger UI / Springfox](https://github.com/springfox/springfox) and [ReDoc](https://github.com/Rebilly/ReDoc)
@@ -65,9 +65,9 @@ PROJECT_FOLDER
 Ensure you have this installed before proceeding further
 - Java 8
 - Maven 3.3.9+ or Gradle 3.3+
-- Node 6.0 or above,  
+- Node 9.0 or above,  
 - npm 5 or above,   
-- Angular-cli 1.6.3
+- Angular-cli 7.1.4
 
 ## About
 This is an RESTfull implementation of an order processing app based on Northwind database schema from Microsoft.
