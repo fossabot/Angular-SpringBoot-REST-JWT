@@ -185,6 +185,7 @@ curl -X GET --header 'Accept: application/json' --header 'Authorization: [replac
 ### Screenshots
 #### Login
 ![Dashboard](/screenshots/login.png?raw=true)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fwlucha%2FAngular-SpringBoot-REST-JWT.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fwlucha%2FAngular-SpringBoot-REST-JWT?ref=badge_shield)
 ---
 #### Dashboard - Order Stats
 ![Dashboard](/screenshots/order_stats.png?raw=true)
@@ -222,3 +223,7 @@ Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com
 
 Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/angular-springboot-rest-jwt#sponsor)]
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fwlucha%2FAngular-SpringBoot-REST-JWT.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fwlucha%2FAngular-SpringBoot-REST-JWT?ref=badge_large)
